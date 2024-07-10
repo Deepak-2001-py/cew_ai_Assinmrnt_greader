@@ -24,8 +24,9 @@ The CrewAI-Groq Assignment Evaluator is an advanced, automated system designed t
 5. [Agents and Tasks](#agents-and-tasks)
 6. [Workflow](#workflow)
 7. [Customization](#customization)
-8. [Contributing](#contributing)
-9.  [License](#license)
+8. [Testing](#testing)
+9. [Contributing](#contributing)
+10.  [License](#license)
 
 
 ## Installation
@@ -136,7 +137,11 @@ Each agent performs a corresponding task (e.g., task_clarity, task_relevance) us
 
 You can customize the evaluation criteria by modifying the agent definitions and task instructions in the respective Python files.
 
-
+## Testing
+Run the test suite to ensure system functionality:
+```
+python -m unittest discover tests
+```
 ## Contributing
 
 We welcome contributions to improve the CrewAI-Groq Assignment Evaluator. 
