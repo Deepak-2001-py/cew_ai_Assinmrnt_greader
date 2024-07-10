@@ -1,6 +1,6 @@
 Documentation for the CrewAI-Groq Assignment Evaluator:
 
-```markdown
+markdown
 # CrewAI-Groq Assignment Evaluator
 
 ## Overview
@@ -24,22 +24,22 @@ The CrewAI-Groq Assignment Evaluator is an advanced, automated system designed t
 5. [Agents and Tasks](#agents-and-tasks)
 6. [Workflow](#workflow)
 7. [Customization](#customization)
-8. [Testing](#testing)
-9. [Contributing](#contributing)
-10. [License](#license)
+8. [Contributing](#contributing)
+9.  [License](#license)
+
 
 ## Installation
 
 To set up the CrewAI-Groq Assignment Evaluator, follow these steps:
 
 1. Clone the repository:
-   ```
+   ```cmd
    git clone https://github.com/yourusername/crewai-groq-assignment-evaluator.git
    cd crewai-groq-assignment-evaluator
    ```
 
 2. Install the required packages:
-   ```
+   ```cmd
    pip install -r requirements.txt
    ```
 
@@ -71,6 +71,7 @@ To evaluate an assignment:
    """
    ```
 2.create  agents and trask 
+```python
 agent = Agent(
     role='name the Grader',
     goal='provide what to achive',
@@ -79,7 +80,12 @@ agent = Agent(
     llm=llm,
     allow_delegation=False
 )
-
+task = Task(
+    description=f""" provide description of the task""",
+    expected_output="format or type of output",
+    agent=agent
+)
+```
 3. Create and run the evaluation crew:
    ```python
    from crewai import Crew
