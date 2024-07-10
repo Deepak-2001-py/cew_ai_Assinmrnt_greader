@@ -1,0 +1,43 @@
+from pydantic import BaseModel
+
+class Agent(BaseModel):
+    role: str
+    goal: str
+    backstory: str
+    verbose: bool
+    llm: object
+    allow_delegation: bool
+
+class Task(BaseModel):
+    description: str
+    expected_output: str
+    agent: Agent
+
+class Crew(BaseModel):
+    agents: list
+    tasks: list
+    verbose: int
+    process: str
+
+    def kickoff(self):
+        # Mock implementation for kickoff method
+        return """he provided summaries demonstrate a meticulous grasp of language and a keen understanding of how to effectively convey information within the specified parameters. Each summary successfully captures the essence of the respective articles while adhering to the desired length and tone.
+
+**Strengths:**
+
+* **Accuracy and Concision:** The summaries accurately summarize the key points of each article while remaining concise and engaging.
+* **Vivid Vocabulary:** The use of vivid vocabulary adds depth and clarity to the summaries, bringing the stories to life.
+* **Action Verbs:** The incorporation of action verbs enhances the readability and impact of the summaries, making them more compelling.
+
+**Areas for Potential Improvement:**
+
+* **Incorporation of Supporting Details:** While the summaries provide a solid overview, they could benefit from the inclusion of additional supporting details to further enrich the content. For example, including specific data points or statistics could enhance the impact of the summaries.
+* **Variety in Sentence Structure:** To enhance readability, the writer could diversify the sentence structure to create a more engaging reading experience.
+
+**Recommendations for Future Submissions:**
+
+* Integrate relevant supporting details and data to bolster the impact of the summaries.
+* Explore different sentence structures to create a more diverse and engaging writing style.
+* Consider incorporating relevant anecdotes or personal insights to add a unique and captivating touch to the summaries.
+
+**Overall, this is an impressive display of summarizing skills. By implementing the suggested improvements, the writer can consistently produce exceptional summaries that engage and inform readers.**"""
